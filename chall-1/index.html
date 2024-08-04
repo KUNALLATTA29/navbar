@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #navbar {
+            position: relative;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 2vw;
+            font-size: 2vw;
+            overflow: hidden;
+        }
+        .inner-nav{
+            width: 100%;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            font-size: 3vw;
+        }
+        .bar{
+            display: none;
+        }
+
+        @media (max-width:480px){
+            #navbar{
+                position: relative;
+                overflow:visible;
+            }
+            .bar{
+                display: block;
+                font-size: 10vw;
+            }
+            .bar button{
+                font-size: 5vw;
+            }
+            #navbar ul {
+                
+                flex-direction: column;
+                width:40vw;
+                align-items: center;
+                padding: 5%;
+                background-color: green ;
+                gap: 5vh;
+                font-size:8vw;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                display: none;
+            }
+
+            
+
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="inner-nav">
+            <ul id="main_visible">
+                <li>home</li>
+                <li>about</li>
+                <li>products</li>
+                <li>cart</li>
+            </ul>
+        </div>
+        <div class="bar">
+            <button onclick="hamburger()">###</button>
+        </div>
+    </nav>
+    <script src="https://kit.fontawesome.com/cdc109e0d0.js" crossorigin="anonymous"></script>
+    <script>
+
+        function hamburger(){
+            let a = document.querySelector("#main_visible");
+
+            if(a.style.display === 'none'){
+                a.style.display = "block";
+            }else{
+                a.style.display = "none";
+            }
+        }
+        
+    </script>
+</body>
+</html>
